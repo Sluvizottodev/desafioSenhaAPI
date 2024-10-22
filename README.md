@@ -55,25 +55,25 @@ Tem a documentação via Swagger disponível [aqui](https://flutter-api.modelvie
 Os principais endpoints são esses:
 
 ### `GET` https://flutter-api.modelviewlabs.com/random
-        
-> Exemplo de resposta: 
+
+> [200] Exemplo de resposta
 
 ```json
-200: {"password":"c1453dDa-5d84-46d5-99f8-8afd05b3b8be"}
+{"password":"c1453dDa-5d84-46d5-99f8-8afd05b3b8be"}
 ```
 
 ### `POST` https://flutter-api.modelviewlabs.com/validate
-        
-> Exemplo de requisição: 
+
+> Exemplo de requisição
 
 ```json
 {"password":"c1453dDa-5d84-46d5-99f8-8afd05b3b8be"}
 ````
 
-> Exemplo de resposta com sucesso:
+> [202] Exemplo de resposta com sucesso
 
 ```json
-202: {"id": "id", "message": "Senha válida..."}
+{"id": "id", "message": "Senha válida..."}
 ```
 
 ### Considerações
