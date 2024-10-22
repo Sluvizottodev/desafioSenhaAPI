@@ -12,6 +12,10 @@ extension ContextExt on RequestContext {
   AppLogger get logger => read<AppLogger>();
   Future<Payload> get payload => read<Future<Payload>>();
 
+  String get ip =>
+      request.headers['x-forwarded-for'] ??
+      request.connectionInfo.remoteAddress.address;
+
   void validateMethod(HttpMethod methodAccepted) {
     if (request.method != methodAccepted) {
       throw MethodNotAllowedException();
@@ -22,7 +26,7 @@ extension ContextExt on RequestContext {
     const List<String> delayRoutes = <String>['/validate', '/random'];
 
     final String path = request.uri.path;
-    if (delayRoutes.contains(path)) {
+    if (delayRoutes.contains(path) && request.headers['no-delay'] == null) {
       final Duration delayDuration = Duration(seconds: Random().nextInt(6));
 
       await Future<void>.delayed(delayDuration, _randomError);

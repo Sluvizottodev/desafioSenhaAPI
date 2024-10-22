@@ -50,11 +50,11 @@ Foi criada uma API especificamente para esse desafio.
 
 O objetivo dela é fornecer os recursos necessários para esta solução, para que você possa focar exclusivamente no aplicativo em Flutter.
 
-Tem a documentação via Swagger disponível [aqui](https://flutter-api.modelviewlabs.com/index.html)
+Tem a documentação via Swagger disponível aqui: [https://desafioflutter-api.modelviewlabs.com/swagger](https://desafioflutter-api.modelviewlabs.com/swagger)
 
 Os principais endpoints são esses:
 
-### `GET` https://flutter-api.modelviewlabs.com/random
+### `GET` https://desafioflutter-api.modelviewlabs.com/random
 
 > [200] Exemplo de resposta
 
@@ -62,7 +62,7 @@ Os principais endpoints são esses:
 {"password":"c1453dDa-5d84-46d5-99f8-8afd05b3b8be"}
 ```
 
-### `POST` https://flutter-api.modelviewlabs.com/validate
+### `POST` https://desafioflutter-api.modelviewlabs.com/validate
 
 > Exemplo de requisição
 

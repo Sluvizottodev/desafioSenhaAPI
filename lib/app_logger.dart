@@ -3,6 +3,10 @@
 import 'package:dart_frog/dart_frog.dart';
 import 'package:intl/intl.dart';
 
+import 'extension/context_ext.dart';
+import 'extension/uri_ext.dart';
+import 'save_author.dart';
+
 class AppLogger {
   void info(String message) {
     print(message);
@@ -15,24 +19,24 @@ class AppLogger {
 
   void logRequest(
     RequestContext context,
-    int? statusCode,
+    Response? response,
     Duration elapsedTime,
   ) {
     final Request request = context.request;
 
-    final String ip = request.connectionInfo.remoteAddress.address;
-
-    final String query =
-        request.uri.query.isEmpty ? '' : '?${request.uri.query}';
-
     final String time = DateFormat('dd-MM HH:mm:ss').format(DateTime.now());
 
     final String method =
-        '[${request.method.name.toUpperCase()} $statusCode]'.padLeft(13);
+        '[${request.method.name.toUpperCase()} ${response?.statusCode}]'
+            .padLeft(13);
 
-    print('$time $method '
-        '${ip.padLeft(10)} '
-        '${elapsedTime.inMilliseconds.toString().padLeft(4)}ms '
-        '/${request.url.path}$query ');
+    print(
+      '$time $method '
+      '${context.ip.padLeft(10)} '
+      '${elapsedTime.inMilliseconds.toString().padLeft(4)}ms '
+      '${context.request.uri.fullPath}',
+    );
+
+    saveAuthor(context, response, elapsedTime).ignore();
   }
 }

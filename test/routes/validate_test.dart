@@ -5,6 +5,7 @@ import 'package:dart_frog/dart_frog.dart';
 import 'package:desafio_shared/shared.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:mvl_desafio/exceptions/method_not_allowed.dart';
+import 'package:mvl_desafio/payload.dart';
 import 'package:test/test.dart';
 import 'package:uuid/uuid.dart';
 
@@ -122,6 +123,10 @@ void main() {
           final _MockPostValidPayloadRequestContext context =
               _MockPostValidPayloadRequestContext();
 
+          when(() => context.read<Future<Payload>>()).thenAnswer(
+            (_) => Payload.fromRequest(context),
+          );
+
           final Response response = await route.onRequest(context);
 
           expect(response.statusCode, HttpStatus.badRequest);
@@ -140,6 +145,10 @@ void main() {
         () async {
           final _MockPostValidPasswordRequestContext context =
               _MockPostValidPasswordRequestContext();
+
+          when(() => context.read<Future<Payload>>()).thenAnswer(
+            (_) => Payload.fromRequest(context),
+          );
 
           final Response response = await route.onRequest(context);
 

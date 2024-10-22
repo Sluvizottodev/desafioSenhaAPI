@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://flutter-api.modelviewlabs.com"
+      "url": "https://desafioflutter-api.modelviewlabs.com"
     }
   ],
   "tags": [
