@@ -1,0 +1,19 @@
+name: mvl_desafio
+description: MVL Desafio
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  dart_frog: ^1.1.0
+  desafio_shared:
+    git:
+      url: https://github.com/ModelViewLabsOrg/desafio_shared.git
+  uuid: ^4.5.1
+  intl: ^0.19.0
+
+dev_dependencies:
+  mocktail: ^1.0.3
+  test: ^1.25.5

@@ -1,0 +1,6 @@
+include: package:desafio_shared/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - build/**
+
