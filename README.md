@@ -84,14 +84,6 @@ Só que ela tem algumas características:
 - Ela tem uns atrasos intencionais e aleatórios também, onde pode demorar de 0 a 5 segundos ⌛️
 
 
-## Envio da solução
-
-Disponibilize o seu código e nos envie o link através do formulário: 
-https://forms.gle/pBKoRT4RiNvKW8fy7
-
-**Tenha certeza que nós teremos permissão de acesso ao link**
-
-
 ---
 
 
