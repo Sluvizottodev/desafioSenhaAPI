@@ -6,6 +6,7 @@ class ApiService {
   final String baseUrl = 'https://desafioflutter-api.modelviewlabs.com';
 
   Future<SenhaModel?> validatePassword(String password) async {
+    print('Enviando a senha para a API: $password');
     final response = await http.post(
       Uri.parse('$baseUrl/validate'),
       headers: {'Content-Type': 'application/json'},
