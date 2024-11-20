@@ -37,17 +37,16 @@ class _PasswordInputScreenState extends State<SenhaInputScreen> {
           style: TextStyle(color: Colors.white), // Título em branco
         ),
         centerTitle: false,
-        backgroundColor: Color(0xFF572884), // Cor roxa para a AppBar
+        backgroundColor: Color(0xFF572884), // Cor roxa
       ),
-      body: SingleChildScrollView( // Permite rolar a tela se o teclado aparecer
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.1), // Espaço superior dinâmico
-              Icon(Icons.lock, size: 80, color: Colors.black), // Ícone preto para contraste
-              SizedBox(height: 16),
+              SizedBox(height: 16), // Adicionado espaço extra aqui
               Text(
                 'Digite sua senha',
                 style: TextStyle(
@@ -56,19 +55,18 @@ class _PasswordInputScreenState extends State<SenhaInputScreen> {
                   color: Colors.black, // Texto em preto
                 ),
               ),
-              SizedBox(height: 24),
-              // Campo de senha com fundo claro
+              SizedBox(height: 32), // Adicionado espaço entre "Digite sua senha" e o campo de entrada
               TextField(
                 controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Insira a senha',
-                  labelStyle: TextStyle(color: Colors.black), // Cor do rótulo em preto
+                  labelStyle: TextStyle(color: Colors.black),
                   hintText: 'Digite sua senha aqui',
-                  hintStyle: TextStyle(color: Colors.black54), // Cor do hintText em preto suave
+                  hintStyle: TextStyle(color: Colors.black54),
                   errorText: _errorMessage.isNotEmpty ? _errorMessage : null,
                   filled: true,
-                  fillColor: Color(0xFFF2F2F2), // Fundo claro para o campo de texto
+                  fillColor: Color(0xFFF2F2F2),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide.none,
@@ -78,7 +76,7 @@ class _PasswordInputScreenState extends State<SenhaInputScreen> {
               SizedBox(height: 24),
               // Botão de validação com cor roxa
               SizedBox(
-                width: double.infinity, // Ocupa toda a largura disponível
+                width: double.infinity,
                 child: ElevatedButton(
                   onPressed: _validatePassword,
                   child: Padding(
@@ -89,8 +87,8 @@ class _PasswordInputScreenState extends State<SenhaInputScreen> {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white, // Cor branca para o texto do botão
-                    backgroundColor: Color(0xFF572884), // Cor roxa para o botão
+                    foregroundColor: Colors.white, // Cor branca p/ texto botão
+                    backgroundColor: Color(0xFF572884), // Cor roxa p/ o botão
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),

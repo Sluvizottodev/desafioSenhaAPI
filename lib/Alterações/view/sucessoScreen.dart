@@ -14,7 +14,7 @@ class SuccessScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Spacer(), // Centraliza os elementos superiores
+            Spacer(), // Centraliza
             // Animação de sucesso
             Lottie.asset(
               'lib/Alterações/animacao/Animation - 1732066924356.json',
@@ -34,7 +34,7 @@ class SuccessScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            Spacer(), // Ajusta para centralização total
+            Spacer(),
             // Botão para retornar à tela principal
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -44,16 +44,24 @@ class SuccessScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text('Voltar'),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    child: Text(
+                      'Voltar',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 14),
+                    foregroundColor: Colors.white, // Cor branca p/ texto botão
+                    backgroundColor: Color(0xFF572884), // Cor roxa p/ o botão
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                   ),
                 ),
               ),
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),
