@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
 import 'package:flutter/material.dart';
-import 'package:mvl_desafio/Altera%C3%A7%C3%B5es/view/senhaInputScreen.dart';
-import 'package:mvl_desafio/Altera%C3%A7%C3%B5es/view/sucessoScreen.dart';
+import 'package:mvl_desafio/alteracoes/view/senhaInputScreen.dart';
+import 'package:mvl_desafio/alteracoes/view/sucessoScreen.dart';
 
 
 void main() {
