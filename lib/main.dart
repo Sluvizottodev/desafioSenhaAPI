@@ -34,3 +34,4 @@ Future<HttpServer> run(Handler handler, InternetAddress ip, int port) {
     poweredByHeader: 'MVL + DartFrog',
   );
 }
+///COMEÇOU A DAR ERRO NA API "CERTIFICATE_VERIFY_FAILED: Hostname mismatch", logo o certificado SSL usado pela API não é confiável e não corresponde ao domínio solicitado.
